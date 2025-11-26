@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .upload-container { background:#fff; padding:30px; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,0.1); max-width:700px; margin:auto; }
+    .result-box { background:#ecfdf5; padding:20px; border-radius:10px; margin-top:30px; }
+    .analysis-title { font-size:22px; font-weight:bold; text-align:center; color:#16a085; margin-top:20px; }
+    .analysis-img { width:100%; border-radius:10px; margin-top:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+</style>
+
+<div class="upload-container">
+    <h2 class="upload-title">Upload CT Image for Detection</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required class="file-input">
+        <button type="submit" class="predict-btn">Predict</button>
+    </form>
+
+    {% if result %}
+    <div class="result-box">
+        <h3 class="result-title">Result: {{ result }}</h3>
+
+        <h3 class="analysis-title">Uploaded Image</h3>
+        <img src="{{ url_for('static', filename='uploads/' ~ filename) }}" class="analysis-img">
+
+        <h3 class="analysis-title">Prediction Probability Graph</h3>
+        <img src="{{ url_for('static', filename=graph_file) }}" class="analysis-img">
+
+        <h3 class="analysis-title">Grad-CAM Heatmap</h3>
+        <img src="{{ url_for('static', filename=heatmap_file) }}" class="analysis-img">
+
+        <h3 class="analysis-title">Model Interpretation</h3>
+        <p style="font-size:16px;">{{ description }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

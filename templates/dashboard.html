@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .dashboard-title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .dashboard-box {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        margin-top: 25px;
+    }
+
+    .card {
+        background: #f0f4f7;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.25s;
+        border: 1px solid #dce3e8;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        background: #e8f7f3;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+        margin-bottom: 8px;
+        color: #16a085;
+    }
+
+    .card p {
+        color: #34495e;
+        font-size: 14px;
+    }
+</style>
+
+<h2 class="dashboard-title">Dashboard</h2>
+
+<div class="dashboard-box">
+    <p style="font-size:16px; color:#555;">
+        Welcome to your dashboard! Here you can view your profile details, previous detections, and system overview.
+    </p>
+
+    <div class="info-grid">
+        <div class="card">
+            <h3>User Info</h3>
+            <p>View your personal details and account data.</p>
+        </div>
+
+        <div class="card">
+            <h3>Detections</h3>
+            <p>Check your previous lung cancer detection results.</p>
+        </div>
+
+        <div class="card">
+            <h3>Upload Scan</h3>
+            <p>Upload new X-ray or CT images for analysis.</p>
+        </div>
+
+        <div class="card">
+            <h3>System Stats</h3>
+            <p>Get insights into model performance and accuracy.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

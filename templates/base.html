@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lung Cancer Detection</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f6f7fb;
+            color: #333;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 12px 20px;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 14px;
+            transition: 0.3s;
+            border-radius: 6px;
+        }
+
+        nav a:hover {
+            background: #1abc9c;
+            color: white;
+        }
+
+        .container {
+            margin: 40px auto;
+            width: 85%;
+            max-width: 1100px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    {% if current_user.is_authenticated %}
+    <a href="/">Home</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/detect">Detection</a>
+    <a href="/history">History</a>
+    <a href="/logout">Logout</a>
+    {% endif %}
+</nav>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

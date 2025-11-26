@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+    .home-container {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+        max-width: 850px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .home-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 15px;
+    }
+
+    .home-text {
+        font-size: 18px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .btn-start {
+        padding: 12px 28px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        background: #1abc9c;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    .btn-start:hover {
+        background: #16a085;
+        transform: translateY(-2px);
+    }
+
+    .highlight-box {
+        background: #ecfdf5;
+        border-left: 4px solid #1abc9c;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 25px;
+        color: #2c3e50;
+        font-size: 16px;
+    }
+</style>
+
+<div class="home-container">
+    <h2 class="home-title">Welcome to Lung Cancer Detection Project</h2>
+
+    <p class="home-text">
+        This system detects lung cancer from CT images using an advanced machine learning model.
+        Upload your chest CT image and receive an instant prediction.
+    </p>
+
+    <a href="/detect" class="btn-start">Start Detection</a>
+
+    <div class="highlight-box">
+        🔍 Fast & Accurate Predictions • 🩺 Medical-Grade Model • 📁 Easy Image Upload
+    </div>
+</div>
+
+{% endblock %}
